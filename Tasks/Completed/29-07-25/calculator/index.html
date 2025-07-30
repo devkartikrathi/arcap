@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,12 @@
 </head>
 <body>
     <div class="calculator">
+        <div class="calculator-header">
+            <h2 class="calculator-title">Calculator</h2>
+            <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">
+                <span class="theme-icon" id="theme-icon">🌙</span>
+            </button>
+        </div>
         <div class="display">
             <div class="previous-operand" id="previous-operand"></div>
             <div class="current-operand" id="current-operand">0</div>

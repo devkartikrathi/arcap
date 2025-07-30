@@ -1,3 +1,38 @@
+// Theme management
+let currentTheme = localStorage.getItem('calculator-theme') || 'dark';
+
+// DOM elements for theme
+const htmlElement = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// Initialize theme
+function initializeTheme() {
+    htmlElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon();
+}
+
+// Toggle theme function
+function toggleTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('calculator-theme', currentTheme);
+    updateThemeIcon();
+    addClickSound();
+}
+
+// Update theme icon
+function updateThemeIcon() {
+    if (currentTheme === 'dark') {
+        themeIcon.textContent = '🌙';
+    } else {
+        themeIcon.textContent = '☀️';
+    }
+}
+
+// Initialize theme on page load
+initializeTheme();
+
 // Calculator functionality
 let currentOperand = '0';
 let previousOperand = '';
@@ -133,6 +168,11 @@ document.addEventListener('keydown', (e) => {
     }
     if (e.key === 'Escape') {
         clearAll();
+    }
+    // Theme toggle with 'T' key
+    if (e.key === 't' || e.key === 'T') {
+        e.preventDefault();
+        toggleTheme();
     }
 });
 
