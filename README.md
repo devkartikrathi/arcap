@@ -40,6 +40,7 @@ A modern, responsive calculator built with HTML, CSS, and JavaScript featuring:
 - Clear all (AC) and delete last character (DEL)
 - Decimal point support
 - Responsive layout
+- Light and dark mode added
 
 ### Usage
 1. Navigate to `Tasks/Completed/29-07-25/calculator/index.html`
