@@ -1,8 +1,20 @@
 # GitHub Session (29-07-25)
 
-## Commands
+## Introduction to Git
 
-### Basic
+Git is a distributed version control system that helps track changes in your code and collaborate with others. It allows you to:
+- Track changes over time
+- Work on different features simultaneously
+- Collaborate with team members
+- Revert to previous versions if needed
+
+### Key Concepts
+- **Repository**: A directory containing your project and its version history
+- **Commit**: A snapshot of your code at a specific point in time
+- **Branch**: A separate line of development
+- **Remote**: A copy of your repository stored on a server (like GitHub)
+
+### Basic Commands
 
 1. **git init**: Initialize the repository. File tracking started.
    - Creates a new Git repository in the current directory
@@ -38,7 +50,7 @@
 7. **git checkout**: Switch between branches or restore files
    - `git checkout <branch-name>` - Switch to branch
    - `git checkout -b <branch-name>` - Create and switch to new branch
-   - Example: `git checkout main`
+   - Example: `git checkout master`
 
 8. **git merge**: Merge branches
    - `git merge <branch-name>` - Merge specified branch into current branch
@@ -47,34 +59,41 @@
 9. **git remote**: Manage remote repositories
    - `git remote add origin <url>` - Add remote repository
    - `git remote -v` - List remote repositories
-   - Example: `git remote add origin https://github.com/username/repo.git`
+   - Example: `git remote add origin https://github.com/devkartikrathi/arcap.git`
 
 10. **git push**: Push commits to remote repository
     - `git push origin <branch-name>` - Push to specific branch
-    - Example: `git push origin main`
+    - Example: `git push origin master`
 
 11. **git pull**: Fetch and merge changes from remote repository
     - `git pull origin <branch-name>` - Pull from specific branch
-    - Example: `git pull origin main`
+    - Example: `git pull origin master`
 
 12. **git clone**: Clone a repository from remote
     - `git clone <url>` - Clone repository to local machine
-    - Example: `git clone https://github.com/username/repo.git`
+    - Example: `git clone https://github.com/devkartikrathi/arcap.git`
+
 
 ## Workflow Examples
 
-### Basic Workflow
-1. `git init` - Initialize repository
-2. Create/edit files
-3. `git add .` - Stage changes
-4. `git commit -m "message"` - Commit changes
-5. `git push origin main` - Push to remote
+### Basic Development Workflow
+1. Make changes to files
+2. Check status: `git status`
+3. Stage changes: `git add .`
+4. Commit changes: `git commit -m "Descriptive message"`
+5. Push to remote: `git push origin main`
 
 ### Feature Branch Workflow
-1. `git checkout -b feature-branch` - Create and switch to feature branch
+1. Create feature branch: `git checkout -b feature-name`
 2. Make changes and commit them
-3. `git push origin feature-branch` - Push feature branch
+3. Push feature branch: `git push origin feature-name`
 4. Create pull request on GitHub
-5. `git checkout main` - Switch back to main
-6. `git pull origin main` - Get latest changes
-7. `git merge feature-branch` - Merge feature into main
+5. Merge after review
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Commit with clear messages
+5. Push to your fork
+6. Create a pull request

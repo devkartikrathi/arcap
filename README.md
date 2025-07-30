@@ -11,7 +11,11 @@ ARCAP/
 ├── Tasks/
 │   ├── Completed/
 │   │   └── 29-07-25/
-│   │       └── Description.md      # Git commands documentation
+    │   │   ├── Description.md      # Git commands documentation
+    │   │   └── calculator/         # Simple calculator project
+    │   │       ├── index.html      # Calculator HTML interface
+    │   │       ├── styles.css      # Modern CSS styling
+    │   │       └── script.js       # JavaScript functionality
 │   └── Given/
 │       └── 29-07-25.pdf        # First assignment PDF
 ```
@@ -22,3 +26,28 @@ ARCAP/
 This assignment focused on learning and demonstrating Git/GitHub concepts and commands. The project has been structured to showcase Git workflow and best practices.
 
 This project shows various Git commands and workflow as part of a GitHub session assignment. It includes examples of basic and advanced Git operations.
+
+### Calculator Project
+
+### Project Overview
+A modern, responsive calculator built with HTML, CSS, and JavaScript featuring:
+- **Full Calculator Functionality**: Addition, subtraction, multiplication, division, modulo
+- **Keyboard Support**: Complete keyboard navigation
+- **Responsive Design**: Works on desktop and mobile devices
+
+### Features
+- Basic mathematical operations (+, -, ×, ÷, %)
+- Clear all (AC) and delete last character (DEL)
+- Decimal point support
+- Responsive layout
+
+### Usage
+1. Navigate to `Tasks/Completed/29-07-25/calculator/index.html`
+2. Use mouse clicks or keyboard input
+3. Perform calculations with full functionality
+4. Clear and start over as needed
+
+### Technical Stack
+- **HTML5**
+- **CSS3**
+- **JavaScript**
