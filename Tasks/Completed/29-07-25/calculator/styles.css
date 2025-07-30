@@ -1,3 +1,50 @@
+/* CSS Variables for themes */
+:root {
+    /* Dark theme (default) */
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --calculator-bg: rgba(255, 255, 255, 0.1);
+    --calculator-border: rgba(255, 255, 255, 0.2);
+    --display-bg: rgba(0, 0, 0, 0.8);
+    --text-primary: white;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    --btn-hover: rgba(255, 255, 255, 0.2);
+    --btn-border: rgba(255, 255, 255, 0.2);
+    --number-bg: rgba(255, 255, 255, 0.15);
+    --operator-bg: rgba(255, 193, 7, 0.3);
+    --operator-color: #ffc107;
+    --clear-bg: rgba(220, 53, 69, 0.3);
+    --clear-color: #dc3545;
+    --equals-bg: rgba(40, 167, 69, 0.3);
+    --equals-color: #28a745;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --btn-shadow: rgba(0, 0, 0, 0.2);
+    --focus-outline: rgba(255, 255, 255, 0.5);
+}
+
+/* Light theme */
+[data-theme="light"] {
+    --bg-primary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --calculator-bg: rgba(255, 255, 255, 0.9);
+    --calculator-border: rgba(0, 0, 0, 0.1);
+    --display-bg: rgba(255, 255, 255, 0.95);
+    --text-primary: #333;
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --btn-bg: rgba(255, 255, 255, 0.8);
+    --btn-hover: rgba(255, 255, 255, 0.9);
+    --btn-border: rgba(0, 0, 0, 0.1);
+    --number-bg: rgba(255, 255, 255, 0.9);
+    --operator-bg: rgba(255, 193, 7, 0.8);
+    --operator-color: #e6a700;
+    --clear-bg: rgba(220, 53, 69, 0.8);
+    --clear-color: #c82333;
+    --equals-bg: rgba(40, 167, 69, 0.8);
+    --equals-color: #1e7e34;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --btn-shadow: rgba(0, 0, 0, 0.1);
+    --focus-outline: rgba(0, 0, 0, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +53,71 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 0.3s ease;
 }
 
 .calculator {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--calculator-bg);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px var(--shadow);
+    border: 1px solid var(--calculator-border);
     width: 320px;
+    transition: all 0.3s ease;
+}
+
+.calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--calculator-border);
+}
+
+.calculator-title {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.theme-toggle {
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.theme-toggle:hover {
+    background: var(--btn-hover);
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(180deg);
 }
 
 .display {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--display-bg);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -33,21 +126,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: background 0.3s ease;
 }
 
 .previous-operand {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     font-size: 16px;
     margin-bottom: 5px;
     min-height: 20px;
+    transition: color 0.3s ease;
 }
 
 .current-operand {
-    color: white;
+    color: var(--text-primary);
     font-size: 32px;
     font-weight: bold;
     word-wrap: break-word;
     word-break: break-all;
+    transition: color 0.3s ease;
 }
 
 .buttons {
@@ -64,16 +160,16 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: var(--btn-bg);
+    color: var(--text-primary);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--btn-border);
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--btn-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px var(--btn-shadow);
 }
 
 .btn:active {
@@ -81,22 +177,22 @@ body {
 }
 
 .number {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--number-bg);
 }
 
 .operator {
-    background: rgba(255, 193, 7, 0.3);
-    color: #ffc107;
+    background: var(--operator-bg);
+    color: var(--operator-color);
 }
 
 .clear {
-    background: rgba(220, 53, 69, 0.3);
-    color: #dc3545;
+    background: var(--clear-bg);
+    color: var(--clear-color);
 }
 
 .equals {
-    background: rgba(40, 167, 69, 0.3);
-    color: #28a745;
+    background: var(--equals-bg);
+    color: var(--equals-color);
     grid-column: span 2;
 }
 
@@ -106,14 +202,27 @@ body {
         width: 280px;
         padding: 15px;
     }
-    
+
     .btn {
         padding: 15px;
         font-size: 16px;
     }
-    
+
     .current-operand {
         font-size: 28px;
+    }
+
+    .calculator-title {
+        font-size: 16px;
+    }
+
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+    }
+
+    .theme-icon {
+        font-size: 16px;
     }
 }
 
@@ -123,13 +232,26 @@ body {
 }
 
 @keyframes buttonPress {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.95); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Focus styles for accessibility */
 .btn:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: 2px solid var(--focus-outline);
     outline-offset: 2px;
-} 
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
+}
