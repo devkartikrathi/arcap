@@ -11,13 +11,15 @@ ARCAP/
 ├── Tasks/
 │   ├── Completed/
 │   │   └── 29-07-25/
-    │   │   ├── Description.md      # Git commands documentation
-    │   │   └── calculator/         # Simple calculator project
-    │   │       ├── index.html      # Calculator HTML interface
-    │   │       ├── styles.css      # Modern CSS styling
-    │   │       └── script.js       # JavaScript functionality
+|   │   │   ├── Description.md      # Git commands documentation
+|   │   │   └── calculator/         # Simple calculator project
+|   │   │       ├── index.html      # Calculator HTML interface
+|   │   │       ├── styles.css      # Modern CSS styling
+|   │   │       └── script.js       # JavaScript functionality
+|   |   └── 30-07-25/
+|   |       └── Description.md      # Basics of ML
 │   └── Given/
-│       └── 29-07-25.pdf        # First assignment PDF
+|       └── 29-07-25.pdf        # First assignment PDF
 ```
 
 ## Assignment 1 - 29-07-25
@@ -52,3 +54,35 @@ A modern, responsive calculator built with HTML, CSS, and JavaScript featuring:
 - **HTML5**
 - **CSS3**
 - **JavaScript**
+
+## Assignment 2 - 30-07-25
+
+### Topic: Basics of Machine Learning
+
+This assignment introduces the foundational concepts and standard workflow used in Machine Learning (ML).
+
+### Basics of Machine Learning
+
+Machine Learning (ML) enables systems to learn from data and improve performance without being explicitly programmed.
+
+#### Types of ML
+- **Supervised Learning**: Labeled data (e.g., regression, classification)
+- **Unsupervised Learning**: Unlabeled data (e.g., clustering)
+- **Reinforcement Learning**: Learning via reward signals
+
+---
+
+### Machine Learning Workflow
+
+1. **Problem Definition**
+2. **Data Collection & Preprocessing**
+3. **Exploratory Data Analysis (EDA)**
+4. **Feature Engineering**
+5. **Model Selection**
+6. **Model Training**
+7. **Model Evaluation**
+8. **Model Improvement**
+9. **Model Deployment**
+10. **Monitoring & Maintenance**
+
+---
