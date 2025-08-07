@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 House Price Predictor</h1>
+            <p>Predict house prices using our trained machine learning model</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Prediction Form -->
+            <div class="form-section">
+                <h2>House Details</h2>
+                <form id="predictionForm">
+                    <div class="form-grid">
+                        <!-- Key Features -->
+                        <div class="form-group">
+                            <label for="lotArea">Lot Area (sq ft)</label>
+                            <input type="number" id="lotArea" name="lotArea" value="0" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="overallQual">Overall Quality (1-10)</label>
+                            <input type="number" id="overallQual" name="overallQual" value="5" min="1" max="10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="yearBuilt">Year Built</label>
+                            <input type="number" id="yearBuilt" name="yearBuilt" value="2000" min="1800" max="2024">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="livingArea">Above Ground Living Area (sq ft)</label>
+                            <input type="number" id="livingArea" name="livingArea" value="0" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="basementArea">Total Basement Area (sq ft)</label>
+                            <input type="number" id="basementArea" name="basementArea" value="0" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bedrooms">Number of Bedrooms</label>
+                            <input type="number" id="bedrooms" name="bedrooms" value="3" min="0" max="10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fullBath">Number of Full Bathrooms</label>
+                            <input type="number" id="fullBath" name="fullBath" value="1" min="0" max="5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fireplaces">Number of Fireplaces</label>
+                            <input type="number" id="fireplaces" name="fireplaces" value="0" min="0" max="5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garageCars">Garage Cars</label>
+                            <input type="number" id="garageCars" name="garageCars" value="1" min="0" max="5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="garageArea">Garage Area (sq ft)</label>
+                            <input type="number" id="garageArea" name="garageArea" value="0" min="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="neighborhood">Neighborhood</label>
+                            <select id="neighborhood" name="neighborhood">
+                                <option value="NAmes">North Ames</option>
+                                <option value="CollgCr">College Creek</option>
+                                <option value="OldTown">Old Town</option>
+                                <option value="Edwards">Edwards</option>
+                                <option value="Somerst">Somerset</option>
+                                <option value="Gilbert">Gilbert</option>
+                                <option value="NridgHt">Northridge Heights</option>
+                                <option value="Sawyer">Sawyer</option>
+                                <option value="NWAmes">Northwest Ames</option>
+                                <option value="SawyerW">Sawyer West</option>
+                                <option value="Mitchel">Mitchell</option>
+                                <option value="NoRidge">Northridge</option>
+                                <option value="Timber">Timberland</option>
+                                <option value="IDOTRR">Iowa DOT and Rail Road</option>
+                                <option value="ClearCr">Clear Creek</option>
+                                <option value="StoneBr">Stone Brook</option>
+                                <option value="SWISU">South & West of Iowa State University</option>
+                                <option value="MeadowV">Meadow Village</option>
+                                <option value="Blueste">Bluestem</option>
+                                <option value="Greens">Greens</option>
+                                <option value="GrnHill">Green Hills</option>
+                                <option value="Landmrk">Landmark</option>
+                                <option value="Veenker">Veenker</option>
+                                <option value="Crawfor">Crawford</option>
+                                <option value="BrDale">Briardale</option>
+                                <option value="Brookside">Brookside</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="houseStyle">House Style</label>
+                            <select id="houseStyle" name="houseStyle">
+                                <option value="1Story">1 Story</option>
+                                <option value="2Story">2 Story</option>
+                                <option value="1.5Unf">1.5 Story Unfinished</option>
+                                <option value="1.5Fin">1.5 Story Finished</option>
+                                <option value="2.5Unf">2.5 Story Unfinished</option>
+                                <option value="2.5Fin">2.5 Story Finished</option>
+                                <option value="SFoyer">Split Foyer</option>
+                                <option value="SLvl">Split Level</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exterQual">Exterior Quality</label>
+                            <select id="exterQual" name="exterQual">
+                                <option value="TA">Typical/Average</option>
+                                <option value="Gd">Good</option>
+                                <option value="Fa">Fair</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="kitchenQual">Kitchen Quality</label>
+                            <select id="kitchenQual" name="kitchenQual">
+                                <option value="TA">Typical/Average</option>
+                                <option value="Gd">Good</option>
+                                <option value="Fa">Fair</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="button" id="predictBtn" class="btn btn-primary">Predict Price</button>
+                        <button type="button" id="testBtn" class="btn btn-secondary">Load Test Data</button>
+                    </div>
+                </form>
+                
+                <!-- Prediction Result -->
+                <div id="predictionResult" class="prediction-result hidden">
+                    <h3>Predicted Price</h3>
+                    <div class="price-display">
+                        <span id="predictedPrice">$0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Section -->
+            <div class="analysis-section">
+                <div class="analysis-header">
+                    <h2>Data Analysis</h2>
+                    <button id="toggleAnalysis" class="btn btn-outline">Show Analysis</button>
+                </div>
+                
+                <div id="analysisContent" class="analysis-content hidden">
+                    <div class="analysis-text">
+                        <h3>Missing Values Heatmap Insights</h3>
+                        <p><strong>Colors Represent Missingness:</strong></p>
+                        <ul>
+                            <li><strong>Yellow:</strong> Represents missing values. The more yellow you see in a column, the more missing data is present in that particular feature.</li>
+                            <li><strong>Purple (or dark color):</strong> Represents non-missing values. Columns that are mostly purple indicate that most of the data is present for that feature.</li>
+                        </ul>
+
+                        <h3>Key Insights</h3>
+                        <p><strong>Data Types and Non-null Counts:</strong></p>
+                        <ul>
+                            <li>The dataset contains <strong>2930 entries</strong> and <strong>82 columns</strong>.</li>
+                            <li><strong>Data Types:</strong> There are 11 columns with float64 data type, 28 columns with int64 data type, and 43 columns with object data type.</li>
+                        </ul>
+
+                        <p><strong>Summary Statistics:</strong></p>
+                        <ul>
+                            <li>The target variable <strong>SalePrice</strong> has a mean of <strong>$180,796</strong> with a standard deviation of <strong>$79,886</strong>.</li>
+                            <li><strong>Overall Qual</strong> (quality of the house) ranges from 1 to 10, with a mean of 6.09.</li>
+                            <li><strong>Year Built</strong> ranges from 1872 to 2010.</li>
+                            <li><strong>Gr Liv Area</strong> shows a mean of 1499 sq ft with a wide range.</li>
+                        </ul>
+
+                        <h3>Missing Values Analysis</h3>
+                        <p><strong>Columns with Significant Missing Values:</strong></p>
+                        <ul>
+                            <li><strong>Alley:</strong> 2732 missing values (93.4% missing)</li>
+                            <li><strong>Pool QC:</strong> 2917 missing values (99.5% missing)</li>
+                            <li><strong>Fence:</strong> 2358 missing values (80.5% missing)</li>
+                            <li><strong>Misc Feature:</strong> 2824 missing values (96.4% missing)</li>
+                        </ul>
+
+                        <h3>Univariate and Bivariate Analysis</h3>
+                        <p><strong>SalePrice Distribution:</strong></p>
+                        <ul>
+                            <li>The distribution of SalePrice is positively skewed, with the majority of house prices falling between $100,000 and $250,000.</li>
+                            <li>The peak frequency is around the $200,000 mark.</li>
+                        </ul>
+
+                        <p><strong>Key Predictors:</strong></p>
+                        <ul>
+                            <li><strong>Gr Liv Area</strong> and <strong>Overall Qual</strong> are strong predictors of SalePrice.</li>
+                            <li>There is a strong positive correlation between Gr Liv Area and SalePrice (0.71).</li>
+                            <li>The highest correlation observed is between SalePrice and Overall Qual (0.80).</li>
+                        </ul>
+
+                        <h3>Multivariate Analysis</h3>
+                        <p><strong>Correlation Insights:</strong></p>
+                        <ul>
+                            <li><strong>SalePrice and Overall Qual:</strong> 0.80 correlation - the highest observed correlation.</li>
+                            <li><strong>SalePrice and Gr Liv Area:</strong> 0.71 correlation - strong positive relationship.</li>
+                            <li><strong>Total Bsmt SF:</strong> 0.63 correlation - moderate relationship.</li>
+                            <li><strong>Year Built:</strong> 0.56 correlation - lower but still relevant.</li>
+                        </ul>
+
+                        <h3>Model Performance</h3>
+                        <p>The model has been trained on the Ames Housing Dataset and includes comprehensive data preprocessing:</p>
+                        <ul>
+                            <li><strong>Data Cleaning:</strong> Handled missing values and outliers</li>
+                            <li><strong>Feature Engineering:</strong> Log transformations and one-hot encoding</li>
+                            <li><strong>Model Training:</strong> Linear Regression with cross-validation</li>
+                            <li><strong>Performance Metrics:</strong> R-squared score and mean squared error</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
